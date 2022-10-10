@@ -6,4 +6,5 @@ c=a+b,
 d=sqrt(c),
 e =a+j*b,
 f=conj(e),
+g=a*b^2,
 whos
