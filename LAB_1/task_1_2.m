@@ -1,6 +1,8 @@
 clear all; close all;
 echo on
 
+%TASK 1.3
+
 %surface total
 s=200,
 syms r,
