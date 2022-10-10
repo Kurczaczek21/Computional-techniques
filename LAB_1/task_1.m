@@ -31,5 +31,5 @@ p2=(-b+sqrt(d))/2*a,
 check=a*p1^2+b*p1+c,
 
 %1.2.1
-
+%test still sry
 whos
