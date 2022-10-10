@@ -21,3 +21,18 @@ B=A*A,
 % zle rozmiary macierzy
 % liczba kolumn w pierwszej macierzy musi byc rowna 
 % liczbie rzzedow w drugiej
+
+% TASK 1.5
+
+H = h.' ,
+V = v.' ,
+
+Z=H*h,
+X=v*V,
+
+z=h*H,
+x=V*v,
+
+C=V*A,
+F=A*H,
+
