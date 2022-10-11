@@ -19,7 +19,7 @@ v=4/3*pi*(r^3),
 
 a=1;
 b=5;
-c=600;
+c=6;
 
 %delta
 d=b^2-4*a*c,
@@ -34,6 +34,7 @@ else
 end
 
 %check
-check=a*p1^2+b*p1+c,
+check1=a*p1^2+b*p1+c,
+check2=a*p2^2+b*p2+c,
 
 whos
