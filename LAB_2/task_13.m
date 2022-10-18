@@ -2,14 +2,14 @@ close all;
 clear;
 clc;
 
-% 1a. przypadek gdy b^2 >> 4ac czyli a = 1, b = 100, c = 1
+% 1. gdy b^2 >> 4ac 
 a1 = 1; b1 = 100; c1 = 1;
 [x1,x2] = ulepszona(a1,b1,c1)
 % 1b. ten sam przypadek ale normalnie liczone
 [x1,x2] = normalna(a1,b1,c1)
 % spoiler nie zgadza sie
 
-% 2a. przypadek gdy miejsca zerowe sa  bardzo blisko siebie (podejrzane)
+% 2. gdy miejsca zerowe sa  bardzo blisko siebie
 a2 = 1; b2 = 0; c2=0.0001;
 [x1,x2] = ulepszona(a2,b2,c2)
 % 2b. ten sam przypadek ale normalnie liczone
