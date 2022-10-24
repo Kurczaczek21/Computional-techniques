@@ -16,7 +16,7 @@ for i = 1:size(b, 2)
    suma(end+1) = x1; % KEYWORD
    sumacond(end+1) = cond1;
 end
-disp("dla c="+c),
+disp("dla c="+c);
 % Wyswietlanie sredniej i odchylenia standardowego rozwiazan rownania
 disp("srednia rozwiazan: " + mean(suma)),
 disp("odchylenie rozwiazan: " + std(suma)),
@@ -25,7 +25,7 @@ disp("srednia uwarunkowan: " + mean(sumacond)),
 disp("odchylenie uwarunkowan: " + std(sumacond)),
 
 %INNE c
-c=0.001,
+c=0.001;
 suma1=[];
 sumacond1=[];
 for i = 1:size(b, 2)
@@ -34,7 +34,7 @@ for i = 1:size(b, 2)
    suma1(end+1) = x1; % KEYWORD
    sumacond1(end+1) = cond1;
 end
-disp("dla c="+c),
+disp("dla c="+c);
 % rownanie
 disp("srednia rozwiazan: " + mean(suma1)),
 disp("odchylenie rozwiazan: " + std(suma1)),
