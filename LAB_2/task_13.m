@@ -1,49 +1,18 @@
-close all;
-clear;
-clc;
+clear all; close all;
 
-% 1. gdy b^2 >> 4ac 
-a1 = 1; b1 = 100; c1 = 1;
-[x1,x2] = ulepszona(a1,b1,c1)
-% 1b. ten sam przypadek ale normalnie liczone
-[x1,x2] = normalna(a1,b1,c1)
-% spoiler nie zgadza sie
+a=1; b=94234234234239; c=5;
 
-% 2. gdy miejsca zerowe sa  bardzo blisko siebie
-a2 = 1; b2 = 0; c2=0.0001;
-[x1,x2] = ulepszona(a2,b2,c2)
-% 2b. ten sam przypadek ale normalnie liczone
-[x1,x2] = normalna(a2,b2,c2)
-% spoiler wychodzi na to samo
+d=sqrt(b^2-4*a*c);
 
-% 3a. przypadek klasyczny normalny wynik
-a3 = 2; b3 = 4; c3 = 2;
-[x1,x2] = ulepszona(a3,b3,c3)
-% 2b. ten sam przypadek ale normalnie liczone
-[x1,x2] = normalna(a3,b3,c3)
-% spoiler wychodzi na to samo bo liczby sa calkowite
+x1 = (-b-d)/(2*a), %tradycyjny sposob
+x2 = (-b+d)/(2*a),
 
-
-
-
-
-function [x1 , x2] = ulepszona(a,b,c)
-    delta = (b*b) - (4*a*c);
-    x1 = ((-b) - sqrt(delta)) / (2*a);
-    x2 = ((-b) - sqrt(delta)) / (2*a);
-
-    if abs(x1) > abs(x2)
-        x2 = (2*c) / (-b - sqrt(delta));
-    else
-        x1 = (2*c) / (-b - sqrt(delta));
-    end
+if abs(x1) > abs(x2)    %wybieramy wieksza wartosc bezwzgl
+    x1_new = x1;
+    x2_new = 2*c / (-b-d);  %zmodyfikowany wiet, dokladniejszy wzor dla mniejszego
+else
+    x1_new = x2;
+    x2_new = 2*c / (-b+d);
 end
 
-function [x1 , x2] = normalna(a,b,c)
-    delta = (b*b) - (4*a*c);
-    x1 = ((-b) - sqrt(delta)) / (2*a);
-    x2 = ((-b) - sqrt(delta)) / (2*a);
-end
-
-
-
+x1_new,x2_new,
