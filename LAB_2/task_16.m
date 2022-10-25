@@ -43,7 +43,7 @@ disp("srednia uwarunkowan: " + mean(sumacond1)),
 disp("odchylenie uwarunkowan: " + std(sumacond1)),
 
 %INNE c
-c=0.500,
+c=0.500;
 suma2=[];
 sumacond2=[];
 for i = 1:size(b, 2)
