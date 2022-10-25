@@ -28,7 +28,7 @@ disp("odchylenie uwarunkowan: " + std(sumacond)),
 disp(" "),
 
 %INNE c
-c=0.49;
+c=0.499;
 suma1=[];
 sumacond1=[];
 for i = 1:size(b, 2)
