@@ -1,5 +1,8 @@
-function rotation_matrix = rotationMatrix(type, angle)
-    angle = angle * (2*pi) / 360; % to radians
+% function includes definition of rotation matrix
+% for every case (source wikipedia)
+
+function rotation_matrix = rotateMatrix(type, angle)
+    angle = angle * pi / 180; % to radians
 
     if type == 'x'
         rotation_matrix = [1          0           0

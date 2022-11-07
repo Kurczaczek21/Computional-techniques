@@ -36,3 +36,5 @@ else
 end
 disp("9.Obliczanie macierzy odwroconej od A (A^-1): "), disp(inv(A))
 disp("10.Obliczanie wyznacznika macierzy: "), disp(det(C));
+disp("11.Obliczanie rzedu macierzy: "), disp(rank(A));
+disp("10.Obliczanie wspolczynnikow wielomianu charakt. macierzy: "), disp(poly(C));
