@@ -11,7 +11,7 @@ x = e + c;
 N = length(x);
 
 % Wykres wygnału wejsciowego
-figure; plot(x); title('x(n)');
+figure; plot(x); title('x(n)'); %n czas
 
 
 % Transformacja liniowa/ortogonalna - ANALIZA
@@ -21,7 +21,7 @@ A = sqrt(2/N) * cos(pi/N * (k'*n));
 % x = A(500,:) + A(1000,:); x = x'; -> to jest 1 podpunkt
 y = A*x;
 % wykres po transformacji ortogonalnej
-figure; plot(y); title('y(k)');
+figure; plot(y); title('y(k)'); %k czestotliwosc
 
 
 % Modyfikacja wyniku
