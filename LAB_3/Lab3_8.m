@@ -1,10 +1,10 @@
 close all; clear all;
 
 % Dane wejsciowe słonia
-[e,fpr]=audioread('elephant1.wav',[1,9586]);
+[e,fpr]=audioread('elephant.wav',[1,2^14]);
 
 % Dane wejsciowe kanarka
-[c,fpr]=audioread('Canary trills animals012.wav',[1,9586]);
+[c,fpr]=audioread('canary.wav',[1,2^14]);
 
 % Zsumowany dzwiek zwierząt
 x = e + c;
@@ -28,7 +28,7 @@ figure; plot(y); title('y(k)');
 % Tu mozna wybrac zakres dolny i gorny
 % Sam słoń to bedzie 1 do 3900 (znieksztalcony lekko)
 % Sam kanarek to bedzie od 4000 do 9500
-start = 3900; stop = 9586;
+start = 3900; stop = 9500;
 
 y(1:start-1,1) = zeros(start-1,1);
 y(stop+1:N,1) = zeros(N-stop,1);
