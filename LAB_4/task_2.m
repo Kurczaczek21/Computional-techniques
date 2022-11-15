@@ -1,26 +1,21 @@
-function [L,U] = myLu(A, choice)
+clear all; close all;
+
+%A = [5 32 -3;
+%    10 -5 21;   % nie zadziała bo macierz
+%    31 2 -1];   % NIE JEST symetryczna i NIE ma dod wartosci
+%                 wyznacznikow 1,2,3
+
+A = [2 -1 0;
+    -1 2 1;
+    0 -1 2];
+
+det(A),
+
+U = chol(A),
+[U,L] = myLu(A),
+
+function [L,U] = myLu(A)
 [N,N] = size(A);
-if(choice == 0) % prosciej, wolniej -----------------------------------------
-  L = eye(N); U = zeros(N,N);
-  for i = 1:N
-      for j=i:N
-          U(i,j) = A(i,j) - L(i,1:i-1)*U(1:i-1,j);
-      end
-      for j=i+1:N
-          L(j,i) = 1/U(i,i) * ( A(j,i) - L(j,1:i-1)*U(1:i-1,i) );
-      end
-  end
-elseif(choice==1)    %moja implementacja
-   L = eye(N); U = zeros(N,N);
-   for i = 1:N
-       for j=1:i-1
-          L(i,j) = 1/U(j,j) * ( A(i,j) - L(i,1:j-1)*U(1:j-1,j) );
-       end
-       for j=i:N
-           U(i,j) = A(i,j) - L(i,1:i-1)*U(1:i-1,j);
-       end
-   end
-elseif(choice==2) %dekompozycja Choleskiego
    L = eye(N);
    for j=1:N
        value=0;
@@ -37,12 +32,4 @@ elseif(choice==2) %dekompozycja Choleskiego
        end
    end
    U = L.';
-else % trudniej, szybciej ----------------------------------------
-U=A; L=eye(N);
-  for i=1:N-1
-     for j=i+1:N
-        L(j,i) = U(j,i) / U(i,i);
-        U(j,i:N) = U(j,i:N) - L(j,i)*U(i,i:N);
-     end
-  end
 end
