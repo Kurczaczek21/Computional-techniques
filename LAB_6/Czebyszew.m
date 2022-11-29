@@ -1,6 +1,6 @@
 function P = Czybyszew(f,n)
     k = 1:n+1;
-    X = cos((2*k-1) * pi / (2*(n+1))); % wzor 6.34
+    X = cos((2*k-1) * pi / (2*(n+1))); % wzor 6.34 z wykladu
     Y = f(X);
     
     P = polyfit(X, Y, n);

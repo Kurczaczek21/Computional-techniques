@@ -1,20 +1,17 @@
-close all; clear all;
-
-% użyje napisanej przeze mnie funkcji aproxymującej
-% używającej metodę Czybyszewa:
 % pierwszy argument to funkcja
 % drugi argument to ilosc wielomianow (wiecej = dokladniej)
 
-fun = @(x) 1./(1 + x.^2);
 
-syms x;
+fun = @(x) 1./(1 + x.^2);
 
 f1 = @() Czebyszew(fun, 5);
 timeit(f1)
+f1();
 
 figure;
+syms x;
 
-aaa = pade(1./(1 + x.^2)),
-
-%f2 = @() fplot(, [-1 1], 'k--'),;
-%timeit(f2)
+f2 = @() fplot(pade(1./(1 + x.^2)));
+timeit(f2)
+xlim([-1 1])
+ylim([0.5 1])
