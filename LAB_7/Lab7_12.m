@@ -3,7 +3,7 @@ fun = @(x) cos(x);
 
 %% wagi i węzły (dla 3 punktowej) mają być zgodne z tymi wyprowadzonymi dla kwadratury Gaussa-Legendra
 nodes3 = [-sqrt(3/5), 0, sqrt(3/5)];
-wages3 = [5/9, 8/9, 5/9];         
+wages3 = [5/9, 8/9, 5/9];         % mniejszy blad
 
 %% wagi i węzły (dla 2 punktowej) jak w zadaniu wyżej
 nodes2 = [-1/sqrt(3) , 1/sqrt(3)];
